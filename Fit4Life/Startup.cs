@@ -26,12 +26,9 @@ namespace Fit4Life
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-<<<<<<< HEAD
             services.AddRazorPages();
-=======
             services.AddDbContext<ClientContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ClientContext")));
->>>>>>> master
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +45,7 @@ namespace Fit4Life
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();

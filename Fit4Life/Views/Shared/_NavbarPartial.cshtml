@@ -1,0 +1,19 @@
+﻿@using Fit4Life.Areas.Identity.Data
+@using Microsoft.AspNetCore.Identity
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Clients" asp-action="Index">Client Organizer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Calculator" asp-action="Index">BMR Calculator</a>
+                </li>
+           </ul>
+        }
+</div>
